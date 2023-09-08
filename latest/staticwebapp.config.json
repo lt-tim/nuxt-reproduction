@@ -1,0 +1,28 @@
+{
+  "trailingSlash": "never",
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, OPTIONS, POST, PUT"
+  },
+  "routes": [
+    {
+      "route": "/link/*",
+      "rewrite": "/index.html"
+    }
+  ],
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/404.html"
+    },
+    "401": {
+      "statusCode": 302,
+      "redirect": "/404.html"
+    },
+    "403": {
+      "rewrite": "/404.html"
+    },
+    "404": {
+      "rewrite": "/404.html"
+    }
+  }
+}
